@@ -43,13 +43,10 @@ class IES_Loader {
         add_action( 'admin_enqueue_scripts', array( $this, 'admin_assets' ) );
     }
 
-    /**
-     * FRONTEND CSS / JS
-     */
-    public function frontend_assets() {
+       public function frontend_assets() {
 
-        // Sadece gerçekten ihtiyaç olan sayfalarda yükleyelim
-        if ( is_account_page() || is_product() || is_tax( 'product_cat' ) || is_front_page() ) {
+        // Sadece gerçekten ihtiyaç olan sayfalarda yükleyelim␊
+        if ( $this->should_enqueue_frontend_assets() ) {
 
             // Genel frontend CSS
             wp_enqueue_style(
@@ -65,11 +62,22 @@ class IES_Loader {
                 IES_URL . 'assets/js/frontend.js',
                 array( 'jquery' ),
                 IES_VERSION,
-                true
+               true
             );
         }
     }
 
+    /**
+     * Frontend assetlerinin yüklenmesi gereken sayfaları güvenli şekilde kontrol et.
+     */
+    protected function should_enqueue_frontend_assets() {
+        $is_account_page = function_exists( 'is_account_page' ) && is_account_page();
+        $is_product_page = function_exists( 'is_product' ) && is_product();
+        $is_product_tax  = function_exists( 'is_tax' ) && is_tax( 'product_cat' );
+        $is_front        = function_exists( 'is_front_page' ) && is_front_page();
+
+        return $is_account_page || $is_product_page || $is_product_tax || $is_front;
+    }
     /**
      * ADMIN CSS
      */
@@ -83,4 +91,5 @@ class IES_Loader {
         );
     }
 }
+
 
