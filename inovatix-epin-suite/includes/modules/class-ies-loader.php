@@ -26,14 +26,17 @@ class IES_Loader {
         // ============================
         //  MODÜLLERİ ÇALIŞTIR
         // ============================
-        new IES_Popup();
+         new IES_Popup();
         new IES_Category();
         new IES_Homepage();
         new IES_Ticket();
         new IES_Reviews();
         new IES_EPIN_Manager();
         new IES_Admin();
-        new IES_Home_Sections(); // YENİ
+
+        // Anasayfa 9 bölüm sistemi kısa kod ve assetleri başlat
+        $home_sections = new IES_Home_Sections();
+        $home_sections->init();
 
         // Assetler
         add_action( 'wp_enqueue_scripts', array( $this, 'frontend_assets' ) );
@@ -80,3 +83,4 @@ class IES_Loader {
         );
     }
 }
+
