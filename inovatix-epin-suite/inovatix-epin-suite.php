@@ -47,7 +47,6 @@ function ies_epin_suite_activate() {
 
     $table_tickets  = $wpdb->prefix . 'ies_tickets';
     $table_messages = $wpdb->prefix . 'ies_ticket_messages';
-    $table_wallet   = $wpdb->prefix . 'ies_wallet_transactions';
 
     require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 
@@ -76,26 +75,8 @@ function ies_epin_suite_activate() {
         KEY user_id (user_id)
     ) {$charset_collate};";
 
-    // (Opsiyonel) Wallet işlem tablosu – ileride rapor vs. için kullanırsın
-    $sql_wallet = "CREATE TABLE {$table_wallet} (
-        id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-        user_id BIGINT(20) UNSIGNED NOT NULL,
-        type VARCHAR(20) NOT NULL, -- topup, spend vs.
-        method VARCHAR(20) NOT NULL, -- havale, pos
-        amount DECIMAL(18,2) NOT NULL,
-        reference_code VARCHAR(64) DEFAULT NULL,
-        order_id BIGINT(20) UNSIGNED DEFAULT 0,
-        status VARCHAR(20) NOT NULL DEFAULT 'pending',
-        created_at DATETIME NOT NULL,
-        PRIMARY KEY (id),
-        KEY user_id (user_id),
-        KEY type (type),
-        KEY order_id (order_id)
-    ) {$charset_collate};";
-
     dbDelta( $sql_tickets );
     dbDelta( $sql_messages );
-    dbDelta( $sql_wallet );
 
     // endpoint'ler için flush (destek-talepleri vs.)
     ies_run_epin_suite();
@@ -110,4 +91,5 @@ function ies_epin_suite_deactivate() {
     flush_rewrite_rules();
 }
 register_deactivation_hook( __FILE__, 'ies_epin_suite_deactivate' );
+
 
