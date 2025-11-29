@@ -18,7 +18,7 @@ define( 'IES_URL',  plugin_dir_url( __FILE__ ) );
 /**
  * Loader sınıfını yükle
  */
-require_once IES_PATH . 'includes/class-ies-loader.php';
+require_once IES_PATH . 'includes/modules/class-ies-loader.php';
 
 /**
  * Plugin çalıştır
@@ -110,3 +110,4 @@ function ies_epin_suite_deactivate() {
     flush_rewrite_rules();
 }
 register_deactivation_hook( __FILE__, 'ies_epin_suite_deactivate' );
+
