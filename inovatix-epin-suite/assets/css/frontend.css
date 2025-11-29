@@ -1,0 +1,976 @@
+/* =========================================================
+ * GENEL TEMA
+ * ======================================================= */
+
+body.ies-epin-category,
+.ies-home-layout,
+.ies-wallet-topup-page,
+.ies-account-tickets-page {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.ies-section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Genel butonlar */
+
+.ies-btn,
+.ies-btn-primary,
+.ies-btn-ghost,
+.ies-neon-hover,
+.ies-wallet-topup-page .button,
+.ies-account-tickets-page .button,
+.ies-order-reviews-block .button {
+    border-radius: 6px;
+    padding: 8px 16px;
+    border: 1px solid #6347d6;
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.ies-btn-primary,
+.ies-wallet-topup-page .button.button-primary,
+.ies-account-tickets-page .button.button-primary,
+.ies-order-reviews-block .button.button-primary {
+    background-color: #6347d6;
+    border-color: #6347d6;
+    color: #ffffff;
+}
+
+.ies-btn-ghost {
+    background-color: transparent;
+    border-color: #6347d6;
+    color: #ffffff;
+}
+
+/* Neon hover efekti */
+
+.ies-neon-hover {
+    position: relative;
+    box-shadow: 0 0 0 0 rgba(99, 71, 214, 0.0);
+}
+
+.ies-neon-hover:hover {
+    box-shadow: 0 0 10px rgba(99, 71, 214, 0.8),
+                0 0 20px rgba(99, 71, 214, 0.7);
+    transform: translateY(-1px);
+}
+
+/* Kart yapısı */
+
+.ies-card {
+    background: #2b2b2b;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    border: 1px solid #444;
+}
+
+/* Input / textarea */
+
+.ies-wallet-topup-page input[type="number"],
+.ies-wallet-topup-page input[type="text"],
+.ies-wallet-topup-page textarea,
+.ies-account-tickets-page input[type="text"],
+.ies-account-tickets-page textarea,
+.ies-order-reviews-block textarea {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #555;
+    padding: 8px 10px;
+    background: #1f1f1f;
+    color: #fff;
+    font-size: 13px;
+}
+
+.ies-wallet-topup-page input[type="number"]:focus,
+.ies-wallet-topup-page input[type="text"]:focus,
+.ies-wallet-topup-page textarea:focus,
+.ies-account-tickets-page input[type="text"]:focus,
+.ies-account-tickets-page textarea:focus,
+.ies-order-reviews-block textarea:focus {
+    outline: none;
+    border-color: #6347d6;
+    box-shadow: 0 0 4px rgba(99, 71, 214, 0.6);
+}
+
+/* =========================================================
+ * KATEGORİ SAYFASI (TABLO)
+ * ======================================================= */
+
+.ies-category-page-wrapper {
+    padding: 10px 0 30px 0;
+}
+
+/* Alt kategori şeridi */
+
+.ies-subcategory-strip {
+    margin-bottom: 20px;
+}
+
+.ies-subcategory-strip-inner {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.ies-subcat-pill {
+    padding: 6px 12px;
+    border-radius: 100px;
+    border: 1px solid #555;
+    background: #222;
+    color: #ffffff;
+    font-size: 13px;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.ies-subcat-pill:hover {
+    border-color: #6347d6;
+    background: #323232;
+}
+
+.ies-subcat-pill.is-active {
+    border-color: #6347d6;
+    background: linear-gradient(90deg, #6347d6, #946cff);
+    color: #ffffff;
+}
+
+/* Ürün tablosu */
+
+.ies-product-table-section {
+    margin-top: 10px;
+}
+
+.ies-product-table {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #444;
+    background: #262626;
+}
+
+.ies-product-table-header,
+.ies-product-table-row {
+    display: grid;
+    grid-template-columns: 1.5fr 0.5fr 0.6fr;
+    align-items: center;
+}
+
+.ies-product-table-header {
+    background: #1e1e1e;
+    border-bottom: 1px solid #444;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #bbbbbb;
+}
+
+.ies-product-table-header .ies-pt-col {
+    padding: 10px 14px;
+}
+
+.ies-product-table-body .ies-product-table-row {
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.ies-product-table-body .ies-product-table-row:last-child {
+    border-bottom: none;
+}
+
+.ies-pt-col {
+    padding: 10px 14px;
+    font-size: 14px;
+}
+
+.ies-pt-col-title .ies-product-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.ies-pt-thumb img {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.ies-pt-title-text {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.ies-pt-price {
+    color: #6347d6;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.ies-pt-col-actions .button,
+.ies-pt-col-actions .add_to_cart_button {
+    border-radius: 6px;
+    padding: 6px 12px;
+    background: #6347d6;
+    border: 1px solid #6347d6;
+    color: #ffffff;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.15s ease;
+}
+
+.ies-pt-col-actions .button:hover,
+.ies-pt-col-actions .add_to_cart_button:hover {
+    box-shadow: 0 0 10px rgba(99, 71, 214, 0.8),
+                0 0 20px rgba(99, 71, 214, 0.6);
+    transform: translateY(-1px);
+}
+
+/* SEO Tabs */
+
+.ies-category-seo-tabs {
+    margin-top: 24px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    background: #262626;
+    padding: 14px 16px;
+}
+
+.ies-seo-tabs-nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.ies-seo-tab-btn {
+    border-radius: 100px;
+    padding: 6px 12px;
+    border: 1px solid #555;
+    background: #222;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.ies-seo-tab-btn.is-active {
+    background: #6347d6;
+    border-color: #6347d6;
+}
+
+.ies-seo-tab-pane {
+    display: none;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #f0f0f0;
+}
+
+.ies-seo-tab-pane.is-active {
+    display: block;
+}
+
+/* =========================================================
+ * POPUP: ID / ZONE / SERVER / NOTE
+ * ======================================================= */
+
+.ies-cart-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.ies-cart-popup-overlay.is-active {
+    display: flex;
+}
+
+.ies-cart-popup {
+    position: relative;
+    max-width: 420px;
+    width: 100%;
+    padding: 2px;
+    border-radius: 14px;
+    background: radial-gradient(circle at top left, #6347d6, #2c2c2c 50%, #6347d6);
+    animation: iesNeonBorder 2s linear infinite;
+}
+
+.ies-cart-popup-inner {
+    border-radius: 12px;
+    background: #1e1e1e;
+    padding: 18px 18px 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ies-cart-popup-close {
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    cursor: pointer;
+}
+
+.ies-cart-popup h3 {
+    margin-top: 0;
+    margin-bottom: 6px;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.ies-cart-popup-sub {
+    font-size: 13px;
+    color: #cccccc;
+    margin-bottom: 10px;
+}
+
+.ies-cart-field {
+    margin-bottom: 10px;
+}
+
+.ies-cart-field label {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 13px;
+}
+
+.ies-cart-field input,
+.ies-cart-field textarea {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #555;
+    padding: 7px 9px;
+    background: #111;
+    color: #fff;
+    font-size: 13px;
+}
+
+.ies-cart-popup-warning {
+    font-size: 12px;
+    color: #ffdd88;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.ies-cart-popup-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.ies-cart-popup-actions button {
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+.ies-cart-popup-cancel {
+    border: 1px solid #555;
+    background: #222;
+    color: #fff;
+}
+
+.ies-cart-popup-submit {
+    border: 1px solid #6347d6;
+    background: #6347d6;
+    color: #fff;
+}
+
+/* Neon border animasyonu */
+
+@keyframes iesNeonBorder {
+    0% {
+        box-shadow: 0 0 5px rgba(99, 71, 214, 0.5),
+                    0 0 15px rgba(99, 71, 214, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(99, 71, 214, 0.9),
+                    0 0 30px rgba(99, 71, 214, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(99, 71, 214, 0.5),
+                    0 0 15px rgba(99, 71, 214, 0.3);
+    }
+}
+
+/* =========================================================
+ * BAKİYE YÜKLE SAYFASI
+ * ======================================================= */
+
+.ies-wallet-topup-page {
+    padding: 10px 0 30px 0;
+}
+
+.ies-wallet-topup-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    .ies-wallet-topup-grid {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+    }
+}
+
+.ies-wallet-box {
+    background: #262626;
+    border-radius: 10px;
+    border: 1px solid #444;
+    padding: 16px 18px;
+}
+
+.ies-wallet-balance {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #6347d6;
+}
+
+.ies-wallet-balance span {
+    font-size: 16px;
+    margin-left: 4px;
+}
+
+.ies-ref-code {
+    font-size: 14px;
+}
+
+.ies-ref-note {
+    font-size: 12px;
+    color: #ffdd88;
+    margin-top: 6px;
+}
+
+.ies-form-group {
+    margin-bottom: 12px;
+}
+
+.ies-form-group label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+
+.ies-amount-input {
+    position: relative;
+}
+
+.ies-amount-input input {
+    padding-right: 40px;
+}
+
+.ies-amount-suffix {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    color: #bbbbbb;
+}
+
+.ies-radio {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.ies-radio input {
+    margin: 0;
+}
+
+.ies-radio small {
+    opacity: 0.8;
+}
+
+.ies-pos-info,
+.ies-bank-warning,
+.ies-pos-disabled-note {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #f0f0f0;
+}
+
+.ies-bank-warning strong {
+    color: #ffdd88;
+}
+
+.ies-topup-submit-wrap {
+    text-align: right;
+}
+
+.ies-wallet-banks {
+    margin-top: 24px;
+}
+
+.ies-bank-grid {
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
+    gap: 12px;
+}
+
+@media (min-width: 768px) {
+    .ies-bank-grid {
+        grid-template-columns: repeat(3, minmax(0,1fr));
+    }
+}
+
+.ies-bank-card {
+    background: #262626;
+    border-radius: 10px;
+    border: 1px solid #444;
+    padding: 10px 12px;
+    font-size: 13px;
+}
+
+.ies-bank-name {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.ies-bank-holder {
+    margin-bottom: 4px;
+    color: #cccccc;
+}
+
+.ies-bank-iban span {
+    color: #aaaaaa;
+    margin-right: 4px;
+}
+
+/* =========================================================
+ * TICKET SİSTEMİ – HESABIM EKRANI
+ * ======================================================= */
+
+.ies-account-tickets-page {
+    padding: 10px 0 30px 0;
+}
+
+.ies-ticket-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
+    gap: 16px;
+}
+
+@media (max-width: 768px) {
+    .ies-ticket-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.ies-ticket-list .ies-card {
+    margin-bottom: 0;
+}
+
+.ies-ticket-list-ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ies-ticket-list-item {
+    margin-bottom: 4px;
+}
+
+.ies-ticket-list-item a {
+    display: grid;
+    grid-template-columns: 0.4fr 1.2fr 0.7fr 1fr;
+    gap: 6px;
+    align-items: center;
+    padding: 6px 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    color: #f0f0f0;
+}
+
+.ies-ticket-list-item.is-active a {
+    background: #3a3a3a;
+}
+
+.ies-ticket-id {
+    font-weight: 600;
+    color: #6347d6;
+}
+
+.ies-ticket-status {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 100px;
+    font-size: 11px;
+    text-align: center;
+}
+
+.ies-status-open {
+    background: #34495e;
+    color: #ecf0f1;
+}
+
+.ies-status-answered {
+    background: #2e7d32;
+    color: #ffffff;
+}
+
+.ies-status-closed {
+    background: #7f8c8d;
+    color: #ffffff;
+}
+
+.ies-ticket-thread {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.ies-ticket-msg {
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.ies-ticket-msg.is-user {
+    background: #1f2933;
+}
+
+.ies-ticket-msg.is-admin {
+    background: #3b2a5f;
+}
+
+.ies-ticket-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    margin-bottom: 3px;
+    opacity: 0.8;
+}
+
+.ies-ticket-body p {
+    margin: 0 0 4px 0;
+}
+
+/* =========================================================
+ * SİPARİŞ DETAYI – HIZLI YORUM BLOĞU + EPIN KUTUSU
+ * ======================================================= */
+
+.ies-order-reviews-block {
+    margin-top: 20px;
+}
+
+.ies-order-review-item {
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.ies-order-review-header a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.ies-order-review-rating {
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.ies-order-review-rating .ies-stars {
+    margin-left: 4px;
+    color: #ffdd55;
+}
+
+/* EPIN kod kutusu */
+
+.ies-order-epin-box {
+    margin-top: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: #1f2933;
+    border: 1px solid #3b4a5a;
+    font-size: 13px;
+}
+
+.ies-epin-code {
+    margin-top: 3px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    background: #111827;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+/* =========================================================
+ * ANASAYFA LAYOUT – [ies_home_layout]
+ * ======================================================= */
+
+.ies-home-layout {
+    padding: 10px 0 30px 0;
+}
+
+/* Üst hero kartlar */
+
+.ies-home-hero-row {
+    margin-bottom: 18px;
+}
+
+.ies-home-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+}
+
+@media (min-width: 900px) {
+    .ies-home-hero-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.ies-hero-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #ffffff;
+    border: 1px solid #444;
+    background: #222;
+}
+
+.ies-hero-card-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(99, 71, 214, 0.4), transparent 60%);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.ies-hero-card-inner {
+    position: relative;
+    padding: 10px 12px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.ies-hero-card-thumb img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.ies-hero-card-text h2 {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+}
+
+.ies-hero-card-text p {
+    margin: 0 0 4px 0;
+    font-size: 12px;
+    color: #dddddd;
+}
+
+.ies-hero-card-cta {
+    font-size: 12px;
+    color: #ffdd55;
+}
+
+/* Yatay şeritler */
+
+.ies-game-strip {
+    margin-bottom: 18px;
+}
+
+.ies-strip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.ies-strip-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.ies-strip-header p {
+    margin: 2px 0 0 0;
+    font-size: 12px;
+    color: #dddddd;
+}
+
+.ies-game-strip-products {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.ies-game-card {
+    min-width: 150px;
+    max-width: 180px;
+    background: #262626;
+    border-radius: 10px;
+    border: 1px solid #444;
+    text-decoration: none;
+    color: #ffffff;
+    overflow: hidden;
+    font-size: 13px;
+}
+
+.ies-game-card-thumb img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.ies-game-card-body {
+    padding: 6px 8px;
+}
+
+.ies-game-card-title {
+    margin-bottom: 4px;
+}
+
+.ies-game-card-price {
+    color: #6347d6;
+    font-weight: 600;
+}
+
+/* LoL alanı */
+
+.ies-lol-section {
+    margin-top: 24px;
+    margin-bottom: 18px;
+}
+
+.ies-lol-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.ies-lol-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.ies-lol-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ies-lol-card {
+    flex: 1 1 calc(25% - 10px);
+    min-width: 180px;
+    background: #262626;
+    border-radius: 10px;
+    border: 1px solid #444;
+    text-decoration: none;
+    color: #ffffff;
+    display: flex;
+    gap: 8px;
+    padding: 6px 8px;
+    font-size: 13px;
+}
+
+.ies-lol-thumb img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.ies-lol-title {
+    margin-bottom: 4px;
+}
+
+.ies-lol-price {
+    color: #6347d6;
+    font-weight: 600;
+}
+
+/* Steam alanı */
+
+.ies-steam-section {
+    margin-bottom: 18px;
+}
+
+.ies-steam-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.ies-steam-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.ies-steam-grid {
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
+    gap: 10px;
+}
+
+@media (min-width: 900px) {
+    .ies-steam-grid {
+        grid-template-columns: repeat(3, minmax(0,1fr));
+    }
+}
+
+.ies-steam-card {
+    background: #262626;
+    border-radius: 10px;
+    border: 1px solid #444;
+    text-decoration: none;
+    color: #ffffff;
+    display: flex;
+    gap: 8px;
+    padding: 6px 8px;
+    font-size: 13px;
+}
+
+.ies-steam-thumb img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.ies-steam-title {
+    margin-bottom: 4px;
+}
+
+.ies-steam-price {
+    color: #6347d6;
+    font-weight: 600;
+}
