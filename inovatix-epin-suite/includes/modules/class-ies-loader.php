@@ -12,30 +12,23 @@ class IES_Loader {
         // ============================
         //  MODÜL DOSYALARINI YÜKLE
         // ============================
-        require_once IES_PATH . 'includes/modules/class-ies-wallet.php';
-        require_once IES_PATH . 'includes/modules/class-ies-wallet-admin.php';
-        require_once IES_PATH . 'includes/modules/class-ies-topup.php';
         require_once IES_PATH . 'includes/modules/class-ies-popup.php';
         require_once IES_PATH . 'includes/modules/class-ies-category.php';
         require_once IES_PATH . 'includes/modules/class-ies-homepage.php';
         require_once IES_PATH . 'includes/modules/class-ies-ticket.php';
         require_once IES_PATH . 'includes/modules/class-ies-reviews.php';
         require_once IES_PATH . 'includes/modules/class-ies-epin.php';
-		require_once IES_PATH . 'includes/class-ies-admin.php'; 
+                require_once IES_PATH . 'includes/class-ies-admin.php';
 
 
         // Modül sınıflarını çalıştır (hepsidir "new" olanlar)
-       new IES_Wallet();
-	   new IES_Topup();
-	   new IES_Popup();
-	   new IES_Category();
-	   new IES_Homepage();
-	   new IES_Ticket();
-	   new IES_Reviews();
-	   new IES_EPIN_Manager();
-	   new IES_Admin();
-	   new IES_Wallet_Admin();
-// IES_Wallet_Admin kendi dosyasında new IES_Wallet_Admin() ile çalışıyor, istersen onu da loader'a taşıyıp buradan yönetebilirsin.
+      new IES_Popup();
+           new IES_Category();
+           new IES_Homepage();
+           new IES_Ticket();
+           new IES_Reviews();
+           new IES_EPIN_Manager();
+           new IES_Admin();
 
 
         // Assetler
@@ -82,4 +75,5 @@ class IES_Loader {
         );
     }
 }
+
 
