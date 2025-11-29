@@ -23,8 +23,6 @@ class IES_Loader {
         require_once IES_PATH . 'includes/modules/class-ies-epin.php';
 		require_once IES_PATH . 'includes/class-ies-admin.php'; 
 
-        // Admin genel
-        require_once IES_PATH . 'includes/class-ies-admin.php';
 
         // Modül sınıflarını çalıştır (hepsidir "new" olanlar)
        new IES_Wallet();
@@ -85,3 +83,4 @@ class IES_Loader {
         );
     }
 }
+
