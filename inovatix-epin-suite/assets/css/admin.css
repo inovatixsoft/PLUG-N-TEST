@@ -1,0 +1,15 @@
+.ies-admin-page .ies-card {
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e2e2e2;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+}
+
+.ies-admin-page h1 {
+    margin-bottom: 12px;
+}
+
+.ies-admin-page table.form-table th {
+    width: 180px;
+}
